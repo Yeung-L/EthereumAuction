@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="./slider.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./move-top.js"></script>
+    <script type="text/javascript" src="./easing.js"></script>
+    <script type="text/javascript" src="./startstop-slider.js"></script>
+	
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="content_top">
+                <div class="heading">
+                    <h3>All Products</h3>
+                </div>
+                <div class="see" style="width:200px">
+                    <div class="search_box" style="width:200px">
+						<form>
+							<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+						</form>
+					</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+			<div id="product-list">
+			<!--
+				<div class="grid_1_of_4 images_1_of_4">
+					<a href="preview.html"><img src="images/new-pic1.jpg" alt="" /></a>
+					<h2>Lorem Ipsum is simply </h2>
+					<div class="price-details">
+						<div class="price-number">
+							<p><span class="rupees">$849.99</span></p>
+						</div>
+						<div class="add-cart">
+							<h4><a href="preview.html">Add to Cart</a></h4>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			-->
+			</div>
+        </div>
+    </div>
+	<div class="row" style="position:fixed;right:80px;bottom:20px;">
+		<div class="content-pagenation">
+				<li id="previous-page"><a  href="#">Prev</a></li>
+				<li id="cur-page"><a  href="#">1</a></li>
+				<!--
+				<li class="active"><a href="#">1</a></li>
+				<li><a href="#">3</a></li>
+				<li><span>....</span></li>
+				-->
+				<li id="next-page"><a href="#" >Next</a></li>
+				<div class="clear"> </div>
+		</div>
+	</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<a href="#" id="toTop"><span id="toTopHover"> </span></a>
+<!-- 
+<div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" ==
+    document.location.protocol) ? " https://" : " http://");document.write(unescape
+("%3Cspan id='cnzz_stat_icon_1253604486'%3E%3C/span%3E%3Cscript src='" +
+    cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1253604486'
+type='text/javascript'%3E%3C/script%3E"));</script></div>
+-->
+</body>
+<script type="text/javascript" src="./index.js"></script>
+</html>
+

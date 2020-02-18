@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<head>
+    <title>News</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./move-top.js"></script>
+    <script type="text/javascript" src="./easing.js"></script>
+
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <div class="header_top">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="" /></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="header_bottom">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="add_product.html" >Sell My Product</a></li>
+                    <li><a href="product_list.html" target="_blank">All Products</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content">
+			<div style="display: none;" class="alert alert-success" id="msg"></div>
+            <form id="add-item-to-store">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <label for="product-name">Product Name</label>
+                                <input type="text" required="required" class="form-control" id="product-name" placeholder="product name" name="product-name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <label for="product-description">Description</label>
+                            <textarea type="text" required="required" class="form-control" name="product-description" id="product-description" placeholder="description(no more than 50 words)" rows="3"></textarea>
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <label for="product-image">upload product image</label>
+                    <input type="file" id="product-image" name="product-image" id="product-image" required="required">
+                    <p class="help-block">please upload an image to display your product</p>
+                </div>
+                <div class="form-group">
+				 <div class="row">
+                        <div class="col-xs-5">
+							<label for="product-category">Category</label>
+							<select class="form-control" name="product-category" id="product-category">
+								<option>Mobile Phones</option>
+								<option>Desktop</option>
+								<option>Laptop</option>
+								<option>Accessories</option>
+								<option>Software</option>
+								<option>Sports and Fitness</option>
+								<option>Footwear</option>
+								<option>Jewellery</option>
+								<option>Clothing</option>
+								<option>Home Decor and Kitchen</option>
+								<option>Beauty and Healthcare</option>
+								<option>Toys Kids and Babies</option>
+								<option>Other</option>
+							</select>
+						</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <label class="" for="product-price">Start Price(in ETH)</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">ETH</div>
+                                <input type="text" class="form-control" id="product-price" placeholder="Amount" name="product-price" onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1')">
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+					<div class="row">
+                        <div class="col-xs-5">
+							<label for="product-condition" class=" control-label">Product Condition</label>
+							<select class="form-control" name="product-condition" id="product-condition">
+								<option value="1">New</option>
+								<option value="2">Used</option>
+							</select>
+						</div>
+                    </div>
+                </div>
+                <div class="form-group">
+					<div class="row">
+							<div class="col-xs-5">
+								<label for="product-price" class=" control-label">Auction Start Time</label>
+								<input type="datetime-local" class="form-control" name="product-auction-start" id="product-auction-start" required="required"></input>
+							</div>
+                    </div>
+                </div>
+                <div class="form-group">
+					<div class="row">
+						<div class="col-xs-5">
+							<label for="product-price" class="control-label">Days to run the auction</label>
+								<select class="form-control" name="product-auction-end" id="product-auction-end">
+									<option>1</option>
+									<option>3</option>
+									<option>5</option>
+									<option>7</option>
+									<option>10</option>
+								</select>
+						</div>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-xs-5">
+						<button  id="sub-btn" style="margin:20px" class="btn btn-default">Add Product To Store</button>
+					</div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<a href="#" id="toTop"><span id="toTopHover"> </span></a>
+</body>
+<script type="text/javascript" src="./index.js"></script>
+</html>
+
